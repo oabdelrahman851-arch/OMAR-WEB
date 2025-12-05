@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Omar Web</title>
+    <style>
+        body {
+            text-align: center;
+            background-image: url("1764695708333.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-attachment: fixed;
+            font-family: Tahoma, sans-serif;
+            color: #ff0000;
+        }
+
+        h1, h2 { margin: 5px 0; }
+
+        form {
+            background: rgba(255,255,255,0.8);
+            display: inline-block;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        input[type="text"], input[type="password"], input[type="submit"] {
+            width: 200px;
+            padding: 8px;
+            margin: 5px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        input[type="submit"] {
+            cursor: pointer;
+            background-color: #0d2299;
+            color: white;
+            font-weight: bold;
+            border: none;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #3333ff;
+        }
+
+        a img {
+            width: 150px;
+            height: 150px;
+            margin: 10px;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        a img:hover {
+            transform: scale(1.2);
+        }
+
+        .product {
+            display: inline-block;
+            margin: 15px;
+            background: rgba(255,255,255,0.8);
+            padding: 10px;
+            border-radius: 10px;
+            width: 200px;
+        }
+
+        .product h2, .product del, .product sub {
+            color: #ff0000;
+            margin: 5px 0;
+        }
+
+        button.amazon-btn {
+            padding: 10px 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            color: #0d2299;
+            font-weight: bold;
+        }
+
+        button.amazon-btn:hover {
+            background-color: #eee;
+        }
+
+        audio, video {
+            margin: 15px 0;
+            border-radius: 10px;
+            width: 400px;
+            max-width: 90%;
+        }
+
+        @media(max-width: 600px){
+            a img { width: 100px; height: 100px; }
+            input[type="text"], input[type="password"] { width: 150px; }
+            audio, video { width: 90%; }
+        }
+
+        .search-container {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+        }
+
+        .search-container input {
+            width: 250px;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+  
+
+<!-- شريط البحث -->
+<div class="search-container">
+    <input type="text" id="searchInput" placeholder="ابحث عن سينسور..." onkeyup="searchProduct()">
+</div>
+
+<form>
+    <h1>username:</h1>
+    <input type="text" id="username" placeholder="Enter your name"><br>
+    <h1>password:</h1>
+    <input type="password" id="password" placeholder="Enter your password"><br>
+    <input type="submit" value="login">
+</form>
+
+<script>
+    const usernameInput = document.getElementById("username");
+    const passwordInput = document.getElementById("password");
+
+    usernameInput.addEventListener("keypress", function(e) {
+        if (e.key === "Enter") {
+            e.preventDefault();
+            passwordInput.focus();
+        }
+    });
+
+    // البحث عن المنتجات
+    function searchProduct() {
+        const searchTerm = document.getElementById("searchInput").value.toLowerCase();
+        const products = document.querySelectorAll(".product");
+        
+        products.forEach(product => {
+            const title = product.querySelector("h2").textContent.toLowerCase();
+            // التأكد من وجود النص في اسم المنتج
+            if (title.includes(searchTerm)) {
+                product.style.display = "inline-block";
+            } else {
+                product.style.display = "none";
+            }
+        });
+    }
+</script>
+
+<h1>🔥MY_NAME_IS_OMAR_WEB🔥</h1>
+<h2>MY SENSOR IS 👇</h2>
+<p>1: ULTRA SONIC</p>
+<p>2: FLAME SENSOR</p>
+<p>3: PIR SENSOR</p>
+<p>4: RESULTS SENSOR</p>
+<p>5: INFRARED SENSOR</p>
+
+<a href="http://www.amazon.com" title="go to amazon.com">
+    <img src="download.png" alt="Amazon">
+</a>
+
+<audio controls>
+    <source src="20251130_144509.wav">
+</audio>
+
+<video controls>
+    <source src="VID_20251201_231209.mp4">
+</video>
+
+<!-- قائمة المنتجات -->
+<div class="product" id="ultrasonic">
+    <h2>ULTRA SONIC 🔥</h2>
+    <del>NO 11$</del>
+    <sub>🔥6$🔥<sup>99</sup></sub><br>
+    <a href="https://www.amazon.com/s?k=HC-SR04+Ultrasonic+Module" title="buy Ultra Sonic"><img src="th.jpg" alt="Ultra Sonic"></a>
+</div>
+
+<div class="product" id="flameSensor">
+    <h2>FLAME SENSOR 🔥</h2>
+    <del>NO 10$</del>
+    <sub>🔥7$🔥<sup>99</sup></sub><br>
+    <a href="https://www.amazon.com/DIYables-Infrared-Arduino-ESP8266-Raspberry/dp/B0BXKKCXQ1" title="buy Flame Sensor"><img src="th (1).jpg" alt="Flame Sensor"></a>
+</div>
+
+<div class="product" id="pirSensor">
+    <h2>PIR SENSOR 🔥</h2>
+    <del>NO 15$</del>
+    <sub>🔥9$🔥<sup>99</sup></sub><br>
+    <a href="https://www.amazon.com/WWZMDiB-HC-SR501-Exclusive-Raspberry-Electronic/dp/B0CCF3HYT9" title="buy PIR Sensor"><img src="OIP.jpg" alt="PIR Sensor"></a>
+</div>    
+
+<div class="product" id="resultsSensor">
+    <h2>RESULTS SENSOR 🔥</h2>
+    <del>NO 15$</del>
+    <sub>🔥9$🔥<sup>99</sup></sub><br>
+    <a href="https://www.amazon.com/s?k=Photo-Resistor+LDR+Light+Sensor+Module" title="buy Results Sensor"><img src="619Zg9EnubL._AC_UL320_.jpg" alt="Results Sensor"></a>
+</div>
+
+<div class="product" id="infraredSensor">
+    <h2>INFRARED SENSOR 🔥</h2>
+    <del>NO 3$</del>
+    <sub>🔥2$🔥<sup>31</sup></sub><br>
+    <a href="https://www.amazon.eg/-/en/Arduino-Infrared-Obstacle-Avoidance-Sensor/dp/B091JB52CG" title="buy Infrared Sensor"><img src="71w2vZ3apOL._AC_SX425_.jpg" alt="Infrared Sensor" width="300" height="300"></a>
+</div>
+
+<!-- منتجات إضافية -->
+<div class="product" id="tempSensor">
+    <h2>TEMP SENSOR 🔥</h2>
+    <del>NO 12$</del>
+    <sub>🔥8$🔥<sup>99</sup></sub><br>
+    <a href="https://www.amazon.eg/-/en/%D8%B3%D9%8A%D9%86%D8%B3%D9%88%D8%B1-%D8%B3%D9%86%D8%B3%D9%88%D8%B1-%D8%A7%D9%84%D8%AD%D8%B1%D8%A7%D8%B1%D8%A9%E2%80%91LM35DZ/dp/B091C8QXGN" title="buy Temp Sensor"><img src="51kOb5jORmL (1).jpg" alt="Temp Sensor"></a>
+</div>
+
+<p><button class="amazon-btn" onclick="document.location='http://www.amazon.com'" title="GO TO amazon.com">amazon.com</button></p>
+<p><h1>من فضلك اكتب رايك عن الموقع رايك يهمنا👇</h1>
+ </p>
+  <h1>👈<textarea name="omar" cols="40" rows="4"></textarea>👉</h1>
+
+
+<h1>🔥🔥Thank you for using Omar Web and amazon.com🔥🔥</h1>
+
+</body>
+</html>
