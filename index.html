@@ -1,234 +1,617 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Omar Web</title>
-    <style>
-        body {
-            text-align: center;
-            background-image: url("1764695708333.jpg");
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-            background-attachment: fixed;
-            font-family: Tahoma, sans-serif;
-            color: #ff0000;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        h1, h2 { margin: 5px 0; }
+<title>OMAR WEB</title>
 
-        form {
-            background: rgba(255,255,255,0.8);
-            display: inline-block;
-            padding: 20px;
-            border-radius: 10px;
-            margin-top: 20px;
-        }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-        input[type="text"], input[type="password"], input[type="submit"] {
-            width: 200px;
-            padding: 8px;
-            margin: 5px 0;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-        }
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-        input[type="submit"] {
-            cursor: pointer;
-            background-color: #0d2299;
-            color: white;
-            font-weight: bold;
-            border: none;
-        }
+<style>
 
-        input[type="submit"]:hover {
-            background-color: #3333ff;
-        }
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-        a img {
-            width: 150px;
-            height: 150px;
-            margin: 10px;
-            border-radius: 10px;
-            transition: transform 0.3s ease;
-        }
+body{
+    font-family:'Poppins',sans-serif;
+    background:url("1764695708333.jpg");
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+    color:white;
+    overflow-x:hidden;
+}
 
-        a img:hover {
-            transform: scale(1.2);
-        }
+.overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.7);
+    z-index:-1;
+}
 
-        .product {
-            display: inline-block;
-            margin: 15px;
-            background: rgba(255,255,255,0.8);
-            padding: 10px;
-            border-radius: 10px;
-            width: 200px;
-        }
+.navbar{
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 40px;
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(10px);
+    position:sticky;
+    top:0;
+}
 
-        .product h2, .product del, .product sub {
-            color: #ff0000;
-            margin: 5px 0;
-        }
+.logo{
+    color:#00ffe1;
+    font-size:30px;
+}
 
-        button.amazon-btn {
-            padding: 10px 20px;
-            margin: 10px 0;
-            border-radius: 5px;
-            border: none;
-            cursor: pointer;
-            color: #0d2299;
-            font-weight: bold;
-        }
+.nav-links a{
+    color:white;
+    text-decoration:none;
+    margin-left:20px;
+    transition:.3s;
+}
 
-        button.amazon-btn:hover {
-            background-color: #eee;
-        }
+.nav-links a:hover{
+    color:#00ffe1;
+}
 
-        audio, video {
-            margin: 15px 0;
-            border-radius: 10px;
-            width: 400px;
-            max-width: 90%;
-        }
+.hero{
+    height:90vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:20px;
+}
 
-        @media(max-width: 600px){
-            a img { width: 100px; height: 100px; }
-            input[type="text"], input[type="password"] { width: 150px; }
-            audio, video { width: 90%; }
-        }
+.hero h1{
+    font-size:60px;
+    color:#00ffe1;
+    margin-bottom:20px;
+}
 
-        .search-container {
-            margin-top: 20px;
-            padding: 10px;
-            background-color: rgba(255, 255, 255, 0.8);
-            border-radius: 10px;
-        }
+.hero p{
+    font-size:20px;
+    max-width:700px;
+}
 
-        .search-container input {
-            width: 250px;
-            padding: 10px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-        }
-    </style>
+.hero button{
+    margin-top:25px;
+    padding:14px 30px;
+    border:none;
+    border-radius:12px;
+    background:linear-gradient(45deg,#00ffe1,#0077ff);
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.hero button:hover{
+    transform:scale(1.05);
+    box-shadow:0 0 20px #00ffe1;
+}
+
+.search-section{
+    text-align:center;
+    margin:40px 0;
+}
+
+.search-section input{
+    width:320px;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    outline:none;
+    font-size:16px;
+}
+
+.login-box{
+    display:flex;
+    justify-content:center;
+    margin-bottom:50px;
+}
+
+form{
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(10px);
+    padding:30px;
+    border-radius:20px;
+    width:350px;
+}
+
+form h2{
+    margin-bottom:20px;
+    text-align:center;
+}
+
+form input{
+    width:100%;
+    padding:14px;
+    margin:10px 0;
+    border:none;
+    border-radius:10px;
+    outline:none;
+}
+
+.password-box{
+    position:relative;
+}
+
+.password-box span{
+    position:absolute;
+    right:15px;
+    top:22px;
+    cursor:pointer;
+}
+
+form button{
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:12px;
+    background:linear-gradient(45deg,#00ffe1,#0077ff);
+    color:white;
+    cursor:pointer;
+    margin-top:10px;
+    transition:.3s;
+}
+
+form button:hover{
+    transform:scale(1.03);
+    box-shadow:0 0 15px #00ffe1;
+}
+
+.products{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+    padding:50px;
+}
+
+.product{
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(10px);
+    border-radius:20px;
+    padding:20px;
+    text-align:center;
+    transition:.4s;
+}
+
+.product:hover{
+    transform:translateY(-10px) scale(1.03);
+    box-shadow:0 0 25px rgba(0,255,225,.5);
+}
+
+.product img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+    border-radius:15px;
+}
+
+.product h2{
+    margin:15px 0;
+}
+
+.old-price{
+    text-decoration:line-through;
+    color:#ff5555;
+}
+
+.price{
+    color:#00ffe1;
+    font-size:25px;
+    margin-top:10px;
+}
+
+.product button{
+    margin-top:15px;
+    padding:12px 20px;
+    border:none;
+    border-radius:12px;
+    background:linear-gradient(45deg,#00ffe1,#0077ff);
+    color:white;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.product button:hover{
+    transform:scale(1.05);
+    box-shadow:0 0 15px #00ffe1;
+}
+
+.media{
+    text-align:center;
+    padding:50px 20px;
+}
+
+audio,video{
+    width:80%;
+    max-width:700px;
+    margin-top:20px;
+    border-radius:20px;
+}
+
+.feedback{
+    text-align:center;
+    padding:50px 20px;
+}
+
+.feedback textarea{
+    width:80%;
+    max-width:700px;
+    height:150px;
+    border:none;
+    border-radius:20px;
+    padding:20px;
+    margin-top:20px;
+    outline:none;
+}
+
+.feedback button{
+    margin-top:20px;
+    padding:12px 30px;
+    border:none;
+    border-radius:12px;
+    background:linear-gradient(45deg,#00ffe1,#0077ff);
+    color:white;
+    cursor:pointer;
+}
+
+footer{
+    text-align:center;
+    padding:30px;
+    background:rgba(255,255,255,.05);
+    margin-top:40px;
+}
+
+@media(max-width:768px){
+
+    .navbar{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    .hero h1{
+        font-size:40px;
+    }
+
+    .search-section input{
+        width:90%;
+    }
+
+    .products{
+        padding:20px;
+    }
+
+}
+
+</style>
 </head>
-<body>
-  
 
-<!-- شريط البحث -->
-<div class="search-container">
-    <input type="text" id="searchInput" placeholder="ابحث عن سينسور..." onkeyup="searchProduct()">
+<body>
+
+<div class="overlay"></div>
+
+<nav class="navbar">
+
+    <h1 class="logo">OMAR WEB 🔥</h1>
+
+    <div class="nav-links">
+        <a href="#products">Products</a>
+        <a href="#login">Login</a>
+        <a href="#feedback">Feedback</a>
+    </div>
+
+</nav>
+
+<section class="hero">
+
+    <h1>WELCOME TO OMAR WEB 🚀</h1>
+
+    <p>
+        The best place for electronic sensors and tech products
+    </p>
+
+    <button onclick="scrollToProducts()">
+        Explore Products
+    </button>
+
+</section>
+
+<section class="search-section">
+
+<input
+type="text"
+id="searchInput"
+placeholder="Search Sensor..."
+onkeyup="searchProduct()"
+>
+
+</section>
+
+<div class="login-box" id="login">
+
+<form id="loginForm">
+
+<h2>LOGIN 🔐</h2>
+
+<input
+type="text"
+id="username"
+placeholder="Enter Username"
+required
+>
+
+<div class="password-box">
+
+<input
+type="password"
+id="password"
+placeholder="Enter Password"
+required
+>
+
+<span onclick="togglePassword()">👁️</span>
+
 </div>
 
-<form>
-    <h1>username:</h1>
-    <input type="text" id="username" placeholder="Enter your name"><br>
-    <h1>password:</h1>
-    <input type="password" id="password" placeholder="Enter your password"><br>
-    <input type="submit" value="login">
+<button type="submit">LOGIN</button>
+
+<p id="message"></p>
+
 </form>
 
-<script>
-    const usernameInput = document.getElementById("username");
-    const passwordInput = document.getElementById("password");
+</div>
 
-    usernameInput.addEventListener("keypress", function(e) {
-        if (e.key === "Enter") {
-            e.preventDefault();
-            passwordInput.focus();
-        }
-    });
+<section class="products" id="products">
 
-    // البحث عن المنتجات
-    function searchProduct() {
-        const searchTerm = document.getElementById("searchInput").value.toLowerCase();
-        const products = document.querySelectorAll(".product");
-        
-        products.forEach(product => {
-            const title = product.querySelector("h2").textContent.toLowerCase();
-            // التأكد من وجود النص في اسم المنتج
-            if (title.includes(searchTerm)) {
-                product.style.display = "inline-block";
-            } else {
-                product.style.display = "none";
-            }
-        });
-    }
-</script>
+<div class="product">
 
-<h1>🔥MY_NAME_IS_OMAR_WEB🔥</h1>
-<h2>MY SENSOR IS 👇</h2>
-<p>1: ULTRA SONIC</p>
-<p>2: FLAME SENSOR</p>
-<p>3: PIR SENSOR</p>
-<p>4: RESULTS SENSOR</p>
-<p>5: INFRARED SENSOR</p>
+<img src="th.jpg" alt="Ultra Sonic">
 
-<a href="http://www.amazon.com" title="go to amazon.com">
-    <img src="download.png" alt="Amazon">
+<h2>ULTRA SONIC</h2>
+
+<p class="old-price">11$</p>
+
+<p class="price">6.99$</p>
+
+<a href="https://www.amazon.com/s?k=HC-SR04+Ultrasonic+Module" target="_blank">
+
+<button>BUY NOW</button>
+
 </a>
 
+</div>
+
+<div class="product">
+
+<img src="th (1).jpg" alt="Flame Sensor">
+
+<h2>FLAME SENSOR</h2>
+
+<p class="old-price">10$</p>
+
+<p class="price">7.99$</p>
+
+<a href="https://www.amazon.com/" target="_blank">
+
+<button>BUY NOW</button>
+
+</a>
+
+</div>
+
+<div class="product">
+
+<img src="OIP.jpg" alt="PIR Sensor">
+
+<h2>PIR SENSOR</h2>
+
+<p class="old-price">15$</p>
+
+<p class="price">9.99$</p>
+
+<a href="https://www.amazon.com/" target="_blank">
+
+<button>BUY NOW</button>
+
+</a>
+
+</div>
+
+<div class="product">
+
+<img src="71w2vZ3apOL._AC_SX425_.jpg" alt="Infrared Sensor">
+
+<h2>INFRARED SENSOR</h2>
+
+<p class="old-price">3$</p>
+
+<p class="price">2.31$</p>
+
+<a href="https://www.amazon.com/" target="_blank">
+
+<button>BUY NOW</button>
+
+</a>
+
+</div>
+
+</section>
+
+<section class="media">
+
 <audio controls>
-    <source src="20251130_144509.wav">
+<source src="20251130_144509.wav">
 </audio>
 
+<br><br>
+
 <video controls>
-    <source src="VID_20251201_231209.mp4">
+<source src="VID_20251201_231209.mp4">
 </video>
 
-<!-- قائمة المنتجات -->
-<div class="product" id="ultrasonic">
-    <h2>ULTRA SONIC 🔥</h2>
-    <del>NO 11$</del>
-    <sub>🔥6$🔥<sup>99</sup></sub><br>
-    <a href="https://www.amazon.com/s?k=HC-SR04+Ultrasonic+Module" title="buy Ultra Sonic"><img src="th.jpg" alt="Ultra Sonic"></a>
-</div>
+</section>
 
-<div class="product" id="flameSensor">
-    <h2>FLAME SENSOR 🔥</h2>
-    <del>NO 10$</del>
-    <sub>🔥7$🔥<sup>99</sup></sub><br>
-    <a href="https://www.amazon.com/DIYables-Infrared-Arduino-ESP8266-Raspberry/dp/B0BXKKCXQ1" title="buy Flame Sensor"><img src="th (1).jpg" alt="Flame Sensor"></a>
-</div>
+<section class="feedback" id="feedback">
 
-<div class="product" id="pirSensor">
-    <h2>PIR SENSOR 🔥</h2>
-    <del>NO 15$</del>
-    <sub>🔥9$🔥<sup>99</sup></sub><br>
-    <a href="https://www.amazon.com/WWZMDiB-HC-SR501-Exclusive-Raspberry-Electronic/dp/B0CCF3HYT9" title="buy PIR Sensor"><img src="OIP.jpg" alt="PIR Sensor"></a>
-</div>    
+<h2>Your Opinion Matters ❤️</h2>
 
-<div class="product" id="resultsSensor">
-    <h2>RESULTS SENSOR 🔥</h2>
-    <del>NO 15$</del>
-    <sub>🔥9$🔥<sup>99</sup></sub><br>
-    <a href="https://www.amazon.com/s?k=Photo-Resistor+LDR+Light+Sensor+Module" title="buy Results Sensor"><img src="619Zg9EnubL._AC_UL320_.jpg" alt="Results Sensor"></a>
-</div>
+<textarea placeholder="Write your opinion..."></textarea>
 
-<div class="product" id="infraredSensor">
-    <h2>INFRARED SENSOR 🔥</h2>
-    <del>NO 3$</del>
-    <sub>🔥2$🔥<sup>31</sup></sub><br>
-    <a href="https://www.amazon.eg/-/en/Arduino-Infrared-Obstacle-Avoidance-Sensor/dp/B091JB52CG" title="buy Infrared Sensor"><img src="71w2vZ3apOL._AC_SX425_.jpg" alt="Infrared Sensor" width="300" height="300"></a>
-</div>
+<br>
 
-<!-- منتجات إضافية -->
-<div class="product" id="tempSensor">
-    <h2>TEMP SENSOR 🔥</h2>
-    <del>NO 12$</del>
-    <sub>🔥8$🔥<sup>99</sup></sub><br>
-    <a href="https://www.amazon.eg/-/en/%D8%B3%D9%8A%D9%86%D8%B3%D9%88%D8%B1-%D8%B3%D9%86%D8%B3%D9%88%D8%B1-%D8%A7%D9%84%D8%AD%D8%B1%D8%A7%D8%B1%D8%A9%E2%80%91LM35DZ/dp/B091C8QXGN" title="buy Temp Sensor"><img src="51kOb5jORmL (1).jpg" alt="Temp Sensor"></a>
-</div>
+<button>SEND</button>
 
-<p><button class="amazon-btn" onclick="document.location='http://www.amazon.com'" title="GO TO amazon.com">amazon.com</button></p>
-<p><h1>من فضلك اكتب رايك عن الموقع رايك يهمنا👇</h1>
- </p>
-  <h1>👈<textarea name="omar" cols="40" rows="4"></textarea>👉</h1>
+</section>
 
+<footer>
 
-<h1>🔥🔥Thank you for using Omar Web and amazon.com🔥🔥</h1>
+<h2>🔥 THANK YOU FOR USING OMAR WEB 🔥</h2>
+
+<p>Made By Omar 😎</p>
+
+</footer>
+
+<script>
+
+function scrollToProducts(){
+
+    document.getElementById("products").scrollIntoView({
+        behavior:"smooth"
+    });
+
+}
+
+function togglePassword(){
+
+    const password =
+    document.getElementById("password");
+
+    if(password.type === "password"){
+
+        password.type = "text";
+
+    }else{
+
+        password.type = "password";
+
+    }
+
+}
+
+function searchProduct(){
+
+    const searchTerm =
+    document
+    .getElementById("searchInput")
+    .value
+    .toLowerCase();
+
+    const products =
+    document.querySelectorAll(".product");
+
+    products.forEach(product => {
+
+        const title =
+        product
+        .querySelector("h2")
+        .textContent
+        .toLowerCase();
+
+        if(title.includes(searchTerm)){
+
+            product.style.display = "block";
+
+        }else{
+
+            product.style.display = "none";
+
+        }
+
+    });
+
+}
+
+const form =
+document.getElementById("loginForm");
+
+form.addEventListener("submit",function(e){
+
+    e.preventDefault();
+
+    const username =
+    document.getElementById("username").value;
+
+    const password =
+    document.getElementById("password").value;
+
+    const message =
+    document.getElementById("message");
+
+    if(username.length < 3){
+
+        message.innerHTML =
+        "❌ Username too short";
+
+        message.style.color = "red";
+
+        return;
+
+    }
+
+    if(password.length < 5){
+
+        message.innerHTML =
+        "❌ Password too weak";
+
+        message.style.color = "red";
+
+        return;
+
+    }
+
+    localStorage.setItem("username",username);
+
+    message.innerHTML =
+    "✅ Login Success";
+
+    message.style.color = "#00ff99";
+
+});
+
+window.addEventListener("scroll",()=>{
+
+    const navbar =
+    document.querySelector(".navbar");
+
+    if(window.scrollY > 50){
+
+        navbar.style.background =
+        "rgba(0,0,0,.7)";
+
+    }else{
+
+        navbar.style.background =
+        "rgba(255,255,255,.08)";
+
+    }
+
+});
+
+</script>
 
 </body>
 </html>
